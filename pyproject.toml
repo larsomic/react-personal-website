@@ -6,6 +6,8 @@ authors = ["Michael Larson"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+python-dotenv = "^0.19.2"
+django-cors-headers = "^3.11.0"
 
 [tool.poetry.dev-dependencies]
 
