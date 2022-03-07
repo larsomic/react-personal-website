@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from django.utils import timezone
 
 class ProjectLanguage(models.Model):
         project_language = models.CharField(max_length=200)
@@ -25,7 +25,7 @@ class ProjectOverview(models.Model):
 class Project(models.Model):
         project_title = models.CharField(max_length = 200)
         project_content = models.TextField()
-        project_published = models.DateTimeField("date published", default = datetime.now())
+        project_published = models.DateTimeField("date published", auto_now_add=True)
         project_overview = models.ForeignKey(ProjectOverview, default=1, verbose_name = "Project Overview", on_delete=models.SET_DEFAULT)
         project_slug = models.CharField(max_length=200, default=1)
 
