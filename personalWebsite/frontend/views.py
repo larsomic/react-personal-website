@@ -15,3 +15,7 @@ class ProjectOverviewView(viewsets.ModelViewSet):
 class ProjectView(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()
+
+# Create your views here.
+def index(request, *args, **kwargs):
+    return render(request, 'frontend/index.html')
