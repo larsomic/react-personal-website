@@ -31,14 +31,26 @@ const Header = () => {
   };
 
   const clickMyResume = () => {
-    console.log('hi')
+    window.location.href='/myresume'
+  };
+
+  const clickMyWork = () => {
+    window.location.href='/mywork'
+  };
+
+  const clickAboutMe = () => {
+    window.location.href='/aboutme'
+  };
+
+  const clickContactMe = () => {
+    window.location.href='/contactme'
   };
   
   var settingFunctionsMap = {
-    "My Work": () =>{clickMyResume()},
+    "My Work": () =>{clickMyWork()},
     "My Résumé": () =>{clickMyResume()},
-    "About Me": () =>{clickMyResume()},
-    "Contact Me": () =>{clickMyResume()},
+    "About Me": () =>{clickAboutMe()},
+    "Contact Me": () =>{clickContactMe()},
   };
 
   const handleMenuOptionClicked = (e) => {
