@@ -12,8 +12,36 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Resume', 'Projects'];
-const settings = ['My Work', 'My Résumé', 'About Me', 'Contact Me'];
+const clickMyResume = () => {
+  window.location.href='/myresume'
+};
+
+const clickMyWork = () => {
+  window.location.href='/mywork'
+};
+
+const clickAboutMe = () => {
+  window.location.href='/aboutme'
+};
+
+const clickContactMe = () => {
+  window.location.href='/contactme'
+};
+
+var settingFunctionsMap = {
+  "My Work": () =>{clickMyWork()},
+  "My Résumé": () =>{clickMyResume()},
+  "About Me": () =>{clickAboutMe()},
+  "Contact Me": () =>{clickContactMe()},
+};
+
+var headerFunctionMap = {
+  "Resume": () =>{clickMyResume()},
+  "Projects": () =>{clickMyWork()},
+}
+
+const settings = Object.keys(settingFunctionsMap);
+const pages = Object.keys(headerFunctionMap);
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -30,29 +58,6 @@ const Header = () => {
     setAnchorElNav(null);
   };
 
-  const clickMyResume = () => {
-    window.location.href='/myresume'
-  };
-
-  const clickMyWork = () => {
-    window.location.href='/mywork'
-  };
-
-  const clickAboutMe = () => {
-    window.location.href='/aboutme'
-  };
-
-  const clickContactMe = () => {
-    window.location.href='/contactme'
-  };
-  
-  var settingFunctionsMap = {
-    "My Work": () =>{clickMyWork()},
-    "My Résumé": () =>{clickMyResume()},
-    "About Me": () =>{clickAboutMe()},
-    "Contact Me": () =>{clickContactMe()},
-  };
-
   const handleMenuOptionClicked = (e) => {
     if(e.target.innerHTML){
       let selectedOption = e.target.childNodes[0].innerHTML
@@ -60,6 +65,14 @@ const Header = () => {
         selectedOption = e.target.innerHTML
       }
       settingFunctionsMap[selectedOption]()
+    }
+    
+    setAnchorElUser(null);
+  };
+
+  const handleNavBarItemClicked = (e) => {
+    if (e.target.innerText){
+      headerFunctionMap[e.target.textContent]()
     }
     
     setAnchorElUser(null);
@@ -75,7 +88,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            Mike Larson
+            Michael Larson
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -108,7 +121,7 @@ const Header = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleNavBarItemClicked}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -120,13 +133,13 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            Michael Larson
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={handleNavBarItemClicked}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
@@ -137,7 +150,7 @@ const Header = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Mike Larson" src={"./../static/images/mikeSquare.jpg"} />
+                <Avatar alt="Michael Larson" src={"./../static/images/mikeSquare.jpg"} />
               </IconButton>
             </Tooltip>
             <Menu
