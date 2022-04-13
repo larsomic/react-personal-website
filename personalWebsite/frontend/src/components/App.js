@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import Header from "./Header.js"
 import Resume from "./Resume.js"
-import Home from "./Home.js"
 
 import {
     BrowserRouter as Router,
@@ -19,7 +18,7 @@ export default class App extends Component {
         return(
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home/>} />
+                    <Route path="/" element={<Header/>} />
                     <Route path="/myresume" element={<Resume/>} />
                     <Route path="/mywork" element={<Header/>} />
                     <Route path="/aboutme" element={<Header/>} />

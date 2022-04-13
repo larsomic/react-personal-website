@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Header from "./Header.js"
 
-const Home = () => {
+const Work = () => {
     return (
         <div><Header/></div>
   );
 };
-export default Home;
+export default Work;
