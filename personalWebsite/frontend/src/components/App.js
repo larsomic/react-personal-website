@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import Header from "./Header.js"
+
+import Home from "./Home.js"
 import Resume from "./Resume.js"
+import Work from "./Work.js"
+import About from "./About.js"
+import Contact from "./Contact.js"
 
 import {
     BrowserRouter as Router,
@@ -18,11 +23,11 @@ export default class App extends Component {
         return(
             <Router>
                 <Routes>
-                    <Route path="/" element={<Header/>} />
+                    <Route path="/" element={<Home/>} />
                     <Route path="/myresume" element={<Resume/>} />
-                    <Route path="/mywork" element={<Header/>} />
-                    <Route path="/aboutme" element={<Header/>} />
-                    <Route path="/contactme" element={<Header/>} />
+                    <Route path="/mywork" element={<Work/>} />
+                    <Route path="/aboutme" element={<About/>} />
+                    <Route path="/contactme" element={<Contact/>} />
                 </Routes>
             </Router>
         )
