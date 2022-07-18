@@ -7,7 +7,7 @@ import Header from "./Header.js"
 
 const Resume = () => {
     return (
-        <div className='mike'>
+        <div>
             <Header/>
             <div className='nameCard'>
                 <p className='resumeTitle'>Michael Larson</p>

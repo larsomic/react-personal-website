@@ -9,4 +9,5 @@ urlpatterns = [
     path('mywork', index, name='mywork'),
     path('aboutme', index, name='aboutme'),
     path('contactme', index, name='contactme'),
+    path('underconstruction', index, name='underconstruction'),
 ]
