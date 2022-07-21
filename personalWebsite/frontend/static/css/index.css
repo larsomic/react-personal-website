@@ -19,28 +19,30 @@ html, body {
 }
 
 .center {
-    position: absolute;
+    position: static;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(12.5%, 5%);
 }
 
 .fullPageCard {
     position: absolute;
     width: 80%;
-    height: 80%;
-    top: 61%;
+    height: 90%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow-y: scroll;
+}
 
+*{
     /* HIDE SCROLL BAR */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
 
 /* HIDE SCROLL BAR */
-.fullPageCard::-webkit-scrollbar { 
+*::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
 
@@ -66,12 +68,16 @@ html, body {
     display: inline;
 }
 
-.nameCard{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    top: 17%;
+.pageContainer{
+    position: relative;
+    margin: auto;
+    top: 5vh;
+    height: 100vh;
+    max-width: 950px;
+}
+
+.fullPagePaper{
+    height: 100vh;
 }
 
 .personalLinkNormalText{
@@ -109,6 +115,12 @@ html, body {
     margin-right: 0px;
 }
 
+.fullPage{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
 .languageBulletList{
     font-size: 16px;
 }
@@ -135,23 +147,16 @@ html, body {
     transform: translate(0%,100%);
 }
 
-@media screen and (max-width: 1006px) {
-    .nameCard {
-        top:18%;
-    }
-
-    .fullPageCard{
-        top: 63.5%
-    }
+.underFullPagePaper{
+    transform: translate(-50%, 0);
+    top: 7%;
+    left: 50%;
+    margin-bottom: 100px !important;
 }
 
 @media screen and (max-width: 770px) {
     .personalLink{
         display: none;
-    }
-
-    .fullPageCard{
-        top: 62%
     }
 
     .personalLinkNormalText{
