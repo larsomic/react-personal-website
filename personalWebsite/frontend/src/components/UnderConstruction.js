@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Header from "./Header.js"
+import Container from '@mui/material/Container';
 
 const UnderConstruction = (props) => {
     let showHeader = null
@@ -10,11 +11,13 @@ const UnderConstruction = (props) => {
         showHeader = <Header/>
     }
     return (
-        <div>
+        <div className='fullPage'>
             {showHeader}
-            <img src={source} className='center' style={{'width':'50%', 'maxWidth':'475px'}}></img>
-            <div className='underConstructionText'>This page is currently under construction.</div>
-            <div className='underConstructionText'>Please check back soon to see this page!</div>
+            <Container maxWidth="lg" className='pageContainer'>
+                <img className='centerImage' src={source}></img>
+                <div className='underConstructionText'>This page is currently under construction.</div>
+                <div className='underConstructionText'>Please check back soon to see this page!</div>
+            </Container>
         </div>
   );
 };
